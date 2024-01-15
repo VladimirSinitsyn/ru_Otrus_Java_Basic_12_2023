@@ -1,4 +1,4 @@
-package Ru.Sinitsyn.Java.Basic.Homeworks.Homework1;
+package ru.sinitsyn.java.basic.homeworks.homework1;
 
 import java.util.Scanner;
 
