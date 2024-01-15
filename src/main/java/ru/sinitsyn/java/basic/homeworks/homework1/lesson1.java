@@ -1,5 +1,5 @@
 package ru.sinitsyn.java.basic.homeworks.homework1;
-
+// Добавление консольного запроса информации
 import java.util.Scanner;
 
 
