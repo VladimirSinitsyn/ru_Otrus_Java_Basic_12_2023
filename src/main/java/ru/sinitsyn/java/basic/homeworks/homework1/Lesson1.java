@@ -1,9 +1,10 @@
 package ru.sinitsyn.java.basic.homeworks.homework1;
 // Добавление консольного запроса информации
+
 import java.util.Scanner;
 
 
-public class lesson1 {
+public class Lesson1 {
     public static void main(String[] args) {
         //Вывод для задания 1
         greetings();
@@ -77,7 +78,7 @@ public class lesson1 {
     public static void addOrSubtractAndPrint(int initValue, int delta, boolean increment) {
         if (increment == true) {
             System.out.println(initValue + delta);
-        } else if (increment == false) {
+        } else {
             System.out.println(delta - initValue);
         }
     }
