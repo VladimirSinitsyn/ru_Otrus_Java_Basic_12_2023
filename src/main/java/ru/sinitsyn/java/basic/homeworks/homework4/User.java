@@ -9,27 +9,27 @@ public class User {
     private int age;
 
     public int getBirthdayYear() {
-        return this.birthdayYear;
+        return birthdayYear;
     }
 
     public String getLastName() {
-        return this.lastName;
+        return lastName;
     }
 
     public String getFirstName() {
-        return this.firstName;
+        return firstName;
     }
 
     public String getFatherName() {
-        return this.fatherName;
+        return fatherName;
     }
 
     public String getEMail() {
-        return this.eMail;
+        return eMail;
     }
 
     public int getAge() {
-        return this.age;
+        return age;
     }
 
     public User(String firstName, String lastName, String fatherName, int birthdayYear, String eMail) {
@@ -41,13 +41,13 @@ public class User {
     }
 
     public void info() {
-        System.out.println("ФИО: " + this.lastName + " " + this.firstName + " " + this.fatherName);
-        System.out.println("Год рождения: " + this.birthdayYear);
-        System.out.println("E-Mail " + this.eMail);
+        System.out.println("ФИО: " + lastName + " " + firstName + " " + fatherName);
+        System.out.println("Год рождения: " + birthdayYear);
+        System.out.println("E-Mail " + eMail);
     }
 
     public int userAge() {
-        this.age = 2024 - this.birthdayYear;
-        return this.getAge();
+        age = 2024 - birthdayYear;
+        return getAge();
     }
 }
