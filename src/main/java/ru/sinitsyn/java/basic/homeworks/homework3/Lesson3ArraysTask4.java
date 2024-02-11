@@ -1,7 +1,7 @@
 package ru.sinitsyn.java.basic.homeworks.homework3;
 
 //Реализовать метод findMax(int[][] array) который должен найти и вернуть максимальный элемент массива;
-public class lesson3ArraysTask4 {
+public class Lesson3ArraysTask4 {
     public static void main(String[] args) {
         int[][] array = {
                 {1, 40, 3},

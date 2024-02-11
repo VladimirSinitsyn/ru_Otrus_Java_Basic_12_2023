@@ -2,7 +2,7 @@ package ru.sinitsyn.java.basic.homeworks.homework3;
 
 /*Реализуйте метод, который считает сумму элементов второй строки двумерного массива,
 если второй строки не существует, то в качестве результата необходимо вернуть -1*/
-public class lesson3ArraysTask5 {
+public class Lesson3ArraysTask5 {
     public static void main(String[] args) {
         int[][] array = {
                 {1, 2, 3},
@@ -11,25 +11,20 @@ public class lesson3ArraysTask5 {
                 {7, 9, 9},
                 {7, 10, 9}
         };
-        sumOfElementsSecondRow(array);
+        System.out.println(sumOfElementsSecondRow(array));
+
     }
 
-    public static void sumOfElementsSecondRow(int[][] array) {
+    public static int sumOfElementsSecondRow(int[][] array) {
         int sum = 0;
-        int countI = 0;
-
         for (int i = 0; i < array[i].length; i++) {
-            sum += array[2][i];
-            for (int j = 0; j < array.length; j++) {
-                countI = array.length;
+            if (array.length < 2) {
+                System.out.println("-1");
+            } else {
+                sum += array[1][i];
             }
         }
-        if (countI < 3) {
-            System.out.println("-1");
-        }
-        System.out.println(sum);
-        System.out.println(countI);
-
-
+        System.out.println(array.length);
+        return sum;
     }
 }

@@ -1,6 +1,6 @@
 package ru.sinitsyn.java.basic.homeworks.homework3;
 
-public class lesson3ArraysTask1 {
+public class Lesson3ArraysTask1 {
 
     public static void main(String[] args) {
         /*Реализовать метод sumOfPositiveElements(..),
