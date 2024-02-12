@@ -67,12 +67,12 @@ public class Box {
         System.out.println(isStatusOpened ? "Коробка открыта" : "Коробка закрыта");
         if (item == null) {
             System.out.println("Коробка пустая");
-        } else System.out.println("В коробке находится " + item);
+        } else {System.out.println("В коробке находится " + item);}
     }
 
 
     public void putItem(String item) {
-        if (this.item == null && isStatusOpened==true) {
+        if (this.item == null && isStatusOpened == true) {
             this.item = item;
             System.out.println("В коробке находится " + item);
 

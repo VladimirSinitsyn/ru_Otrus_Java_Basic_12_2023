@@ -44,6 +44,7 @@ public class User {
         System.out.println("ФИО: " + lastName + " " + firstName + " " + fatherName);
         System.out.println("Год рождения: " + birthdayYear);
         System.out.println("E-Mail " + eMail);
+
     }
 
     public int userAge() {

@@ -13,8 +13,5 @@ public class MainBox {
         box1.info1();
 
 
-
-
-
     }
 }
