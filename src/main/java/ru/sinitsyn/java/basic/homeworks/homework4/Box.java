@@ -60,7 +60,7 @@ public class Box {
         System.out.println("Коробка закрыта");
     }
 
-    public void info1() {
+    public void info() {
         System.out.println("Коробка c размерами: \nДлина: " + SizeHeight + "\nШирина: " + SizeWeight + "\nВысота: " + SizeDepth + "\nЦвет: " + Color);
         System.out.println(isStatusOpened ? "Коробка открыта" : "Коробка закрыта");
         if (item == null) {
