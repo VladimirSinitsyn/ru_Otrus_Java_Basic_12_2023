@@ -1,5 +1,7 @@
 package ru.sinitsyn.java.basic.homeworks.homework4;
 
+import java.time.Year;
+
 public class User {
     private String firstName;
     private String lastName;
@@ -7,6 +9,8 @@ public class User {
     private int birthdayYear;
     private String eMail;
     private int age;
+    int currentYear = Year.now().getValue();
+
 
     public int getBirthdayYear() {
         return birthdayYear;
@@ -48,7 +52,7 @@ public class User {
     }
 
     public int userAge() {
-        age = 2024 - birthdayYear;
-        return getAge();
+        age =  currentYear - birthdayYear;
+        return age;
     }
 }

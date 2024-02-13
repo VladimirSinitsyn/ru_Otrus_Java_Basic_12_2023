@@ -7,24 +7,24 @@ package ru.sinitsyn.java.basic.homeworks.homework4;
  */
 
 public class Box {
-    private int boxSizeHeight;
-    private int boxSizeWeight;
-    private int boxSizeDepth;
-    private String boxColor;
+    private int SizeHeight;
+    private int SizeWeight;
+    private int SizeDepth;
+    private String Color;
     private Boolean isStatusOpened;
     private String item;
 
 
-    public int getBoxSizeHeight() {
-        return boxSizeHeight;
+    public int getSizeHeight() {
+        return SizeHeight;
     }
 
-    public int getBoxSizeWeight() {
-        return boxSizeWeight;
+    public int getSizeWeight() {
+        return SizeWeight;
     }
 
-    public int getBoxSizeDepth() {
-        return boxSizeDepth;
+    public int getSizeDepth() {
+        return SizeDepth;
     }
 
 
@@ -37,18 +37,16 @@ public class Box {
         return item;
     }
 
-    public void setBoxColor(String boxColor) {
-        this.boxColor = boxColor;
+    public void setColor(String boxColor) {
+        this.Color = Color;
     }
 
-    public Box(int boxSizeHeight, int boxSizeWeight, int boxSizeDepth, String boxColor) {
-        this.boxSizeHeight = boxSizeHeight;
-        this.boxSizeWeight = boxSizeWeight;
-        this.boxSizeDepth = boxSizeDepth;
-        this.boxColor = boxColor;
+    public Box(int SizeHeight, int SizeWeight, int SizeDepth, String Color) {
+        this.SizeHeight = SizeHeight;
+        this.SizeWeight = SizeWeight;
+        this.SizeDepth = SizeDepth;
+        this.Color = Color;
         this.isStatusOpened = false;
-        this.item = null;
-
     }
 
     public void clickOpen() {
@@ -63,11 +61,13 @@ public class Box {
     }
 
     public void info1() {
-        System.out.println("Коробка c размерами: \nДлина: " + boxSizeHeight + "\nШирина: " + boxSizeWeight + "\nВысота: " + boxSizeDepth + "\nЦвет: " + boxColor);
+        System.out.println("Коробка c размерами: \nДлина: " + SizeHeight + "\nШирина: " + SizeWeight + "\nВысота: " + SizeDepth + "\nЦвет: " + Color);
         System.out.println(isStatusOpened ? "Коробка открыта" : "Коробка закрыта");
         if (item == null) {
             System.out.println("Коробка пустая");
-        } else {System.out.println("В коробке находится " + item);}
+        } else {
+            System.out.println("В коробке находится " + item);
+        }
     }
 
 
@@ -75,9 +75,7 @@ public class Box {
         if (this.item == null && isStatusOpened == true) {
             this.item = item;
             System.out.println("В коробке находится " + item);
-
-
-        }
+        } else System.out.println("Коробка закрыта. Не удалось положить " + item + " в коробку");
     }
 
     public void throwItem() {
