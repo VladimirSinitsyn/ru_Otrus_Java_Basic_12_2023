@@ -2,11 +2,14 @@ package ru.sinitsyn.java.basic.homeworks.homework6;
 
 public class Cat {
     private String name;
-    private Boolean feelingFull;
+    private int appetite;
+    private boolean feelingFull=false;
 
-    public Cat(String name) {
+    public Cat(String name, int appetite) {
         this.name = name;
-        this.feelingFull = false;
+        this.appetite=appetite;
+        /*this.feelingFull = false;*/
+
     }
 
     public String getName() {
@@ -17,15 +20,27 @@ public class Cat {
         this.name = name;
     }
 
-    public void eat(Plate plate) {
-        if (!feelingFull && plate.getCurrentFoodValue() > 0) {
-            plate.decreaseFood(20);
-            feelingFull = true;
-            System.out.println("Кот " + name + " наелся");
-        } else {
-            System.out.println("Кот " + name + " Голоден");
-        }
+    public int getAppetite() {
+        return appetite;
     }
+
+    public void setAppetite(int appetite) {
+        this.appetite = appetite;
+    }
+
+    public void eat(Plate plate) {
+        if (!feelingFull && plate.getCurrentFoodValue() > 0 && appetite< plate.getCurrentFoodValue()) {
+           plate.decreaseFood(appetite);
+            System.out.println("Кот " + name + " наелся");
+            feelingFull = true;
+
+
+
+            } else {
+                System.out.println("Кот " + name + " Голоден");
+            }
+        }
+
 
     public void info() {
         System.out.println("Статус сытости " + feelingFull);

@@ -11,18 +11,18 @@ package ru.sinitsyn.java.basic.homeworks.homework6;
 public class Main {
     public static void main(String[] args) {
         Cat[] cat = {
-                new Cat("Barsik"),
-                new Cat("Boris"),
-                new Cat("Marmaris"),
-                new Cat("Chubais"),
-                new Cat("Zlodey"),
-                new Cat("Baksik"),
-                new Cat("Markiz")
+                new Cat("Barsik",100),
+                new Cat("Boris",20),
+                new Cat("Marmaris",30),
+                new Cat("Chubais",40),
+                new Cat("Zlodey", 50),
+                new Cat("Baksik",100),
+                new Cat("Markiz",10)
         };
 
-        Plate plate = new Plate(100);
+        Plate plate = new Plate(300);
         plate.info();
-        plate.addFoodToPlate(200);
+        plate.addFoodToPlate(400);
         plate.info();
         /*Кормление котов. Прохождение по массиву.
         Количество еды задается в методе eat класса Cat*/

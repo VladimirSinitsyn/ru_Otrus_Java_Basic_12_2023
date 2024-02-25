@@ -41,12 +41,13 @@ public class Plate {
         } else currentFoodValue += food;
     }
 
-    public void decreaseFood(int food) {
+    public boolean decreaseFood(int food) {
         if (currentFoodValue <= 0) {
             System.out.println("еда закончилась");
         } else {
             currentFoodValue -= food;
         }
+        return false;
     }
 
     public boolean booleanFoodStatus() {
