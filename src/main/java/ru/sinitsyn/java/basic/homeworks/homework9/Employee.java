@@ -1,0 +1,116 @@
+package ru.sinitsyn.java.basic.homeworks.homework9;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+/*
+* Создайте класс Сотрудник с полями: имя, возраст;
+* Реализуйте метод, принимающий в качестве аргумента список сотрудников, и возвращающий список их имен;
+* Реализуйте метод, принимающий в качестве аргумента список сотрудников и минимальный возраст,
+  и возвращающий список сотрудников, возраст которых больше либо равен указанному аргументу;
+* Реализуйте метод, принимающий в качестве аргумента список сотрудников и минимальный средний возраст,
+  и проверяющий что средний возраст сотрудников превышает указанный аргумент;
+* Реализуйте метод, принимающий в качестве аргумента список сотрудников, и возвращающий ссылку на самого молодого сотрудника.*/
+public class Employee {
+    //Ниже модуль для запуска методов
+    public static void main(String[] args) {
+        List<Employee> employee = new ArrayList<>();
+        employee.add(new Employee("Иван", "Иванов", 30));
+        employee.add(new Employee("Cергей", "Сергеев", 25));
+        employee.add(new Employee("Пётр", "Петров", 35));
+        employee.add(new Employee("Елена", "Еленовна", 20));
+        employee.add(new Employee("Максим", "Максимов", 40));
+        List<String> employeeNames = returnListOfNames(employee);
+        System.out.println(employeeNames);
+        List<Employee> employeeListByMinAge = returnEmployeeListByMinAge(employee, 35);
+        for (Employee filterByAge : employeeListByMinAge) {
+            System.out.println(filterByAge);
+        }
+        boolean checkIfFactAgeMoreThenAverage = checkMinAverageAge(employee, 29);
+        System.out.println(checkIfFactAgeMoreThenAverage);
+        System.out.println(Employee.returnLinkToYoungestEmployee(employee));
+    }
+
+    //Ниже конструктор
+    private String firstName;
+    private String lastName;
+    private int age;
+
+    public Employee(String firstName, String lastName, int age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return firstName + " " + lastName + " " + age;
+    }
+
+    //Ниже методы по порядку
+
+    //Реализуйте метод, принимающий в качестве аргумента список сотрудников, и возвращающий список их имен;
+    public static List<String> returnListOfNames(List<Employee> employees) {
+        List<String> firstNames = new ArrayList<>();
+        for (Employee employee : employees) {
+            firstNames.add(employee.getFirstName());
+        }
+        return firstNames;
+    }
+
+    /*Реализуйте метод, принимающий в качестве аргумента список сотрудников и минимальный возраст,
+    и возвращающий список сотрудников, возраст которых больше либо равен указанному аргументу;*/
+    public static List<Employee> returnEmployeeListByMinAge(List<Employee> employees, int minAge) {
+        List<Employee> employeeListByMinAge = new ArrayList<>();
+        for (Employee employee : employees) {
+            if (employee.getAge() >= minAge) {
+                employeeListByMinAge.add(employee);
+            }
+        }
+        return employeeListByMinAge;
+    }
+
+    /*    Реализуйте метод, принимающий в качестве аргумента список сотрудников и минимальный средний возраст,
+        и проверяющий что средний возраст сотрудников превышает указанный аргумент;*/
+    public static boolean checkMinAverageAge(List<Employee> employees, int minAverageAge) {
+        int sumOfAges = 0;
+        for (Employee employee : employees) {
+            sumOfAges += employee.getAge();
+        }
+        int averageAge = sumOfAges / employees.size();
+        return averageAge > minAverageAge;
+    }
+
+    /*    Реализуйте метод, принимающий в качестве аргумента список сотрудников, и возвращающий ссылку на самого молодого сотрудника.*/
+    public static Employee returnLinkToYoungestEmployee(List<Employee> employees) {
+        Collections.sort(employees, (employee1, employee2) -> Integer.compare(employee1.getAge(), employee2.getAge()));
+        return employees.get(0);
+    }
+}
+
+
