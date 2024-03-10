@@ -21,15 +21,10 @@ public class Employee {
         employee.add(new Employee("Пётр", "Петров", 35));
         employee.add(new Employee("Елена", "Еленовна", 20));
         employee.add(new Employee("Максим", "Максимов", 40));
-        List<String> employeeNames = returnListOfNames(employee);
-        System.out.println(employeeNames);
-        List<Employee> employeeListByMinAge = returnEmployeeListByMinAge(employee, 35);
-        for (Employee filterByAge : employeeListByMinAge) {
-            System.out.println(filterByAge);
-        }
-        boolean checkIfFactAgeMoreThenAverage = checkMinAverageAge(employee, 29);
-        System.out.println(checkIfFactAgeMoreThenAverage);
-        System.out.println(Employee.returnLinkToYoungestEmployee(employee));
+        System.out.println("Cписок имен сотрудников: " + returnListOfNames(employee));
+        System.out.println("Список сотрудников, возраст которых больше либо равен указанному аргументу(в данном случае 35):  " + returnEmployeeListByMinAge(employee, 35));
+        System.out.println("Проверка, что средний возраст всех сотрдуников больше 29 " + checkMinAverageAge(employee, 29));
+        System.out.println("Самый молодой сотрудник " + Employee.returnLinkToYoungestEmployee(employee));
     }
 
     //Ниже конструктор
