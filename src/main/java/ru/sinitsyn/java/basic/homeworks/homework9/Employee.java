@@ -15,12 +15,8 @@ import java.util.List;
 public class Employee {
     //Ниже модуль для запуска методов
     public static void main(String[] args) {
-        List<Employee> employee = new ArrayList<>();
-        employee.add(new Employee("Иван", "Иванов", 30));
-        employee.add(new Employee("Cергей", "Сергеев", 25));
-        employee.add(new Employee("Пётр", "Петров", 35));
-        employee.add(new Employee("Елена", "Еленовна", 20));
-        employee.add(new Employee("Максим", "Максимов", 40));
+        List<Employee> employee = generateList();
+       //вывод задач в консоль по порядку
         System.out.println("Cписок имен сотрудников: " + returnListOfNames(employee));
         System.out.println("Список сотрудников, возраст которых больше либо равен указанному аргументу(в данном случае 35):  " + returnEmployeeListByMinAge(employee, 35));
         System.out.println("Проверка, что средний возраст всех сотрдуников больше 29 " + checkMinAverageAge(employee, 29));
@@ -66,7 +62,17 @@ public class Employee {
     public String toString() {
         return firstName + " " + lastName + " " + age;
     }
+//Утильный метод для работы со списками сотрудников
+public static List<Employee> generateList() {
+    List<Employee> result = new ArrayList<>();
+    result.add(new Employee("Иван", "Иванов", 30));
+    result.add(new Employee("Cергей", "Сергеев", 25));
+    result.add(new Employee("Пётр", "Петров", 35));
+    result.add(new Employee("Елена", "Еленовна", 20));
+    result.add(new Employee("Максим", "Максимов", 40));
+    return result;
 
+}
     //Ниже методы по порядку
 
     //Реализуйте метод, принимающий в качестве аргумента список сотрудников, и возвращающий список их имен;

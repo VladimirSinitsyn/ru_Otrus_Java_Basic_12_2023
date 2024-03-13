@@ -7,8 +7,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        minMax();
-        sumElementsIfValuesMoreThen5();
+        ArrayList<Integer> numberList = minMaxList(-3, 5);
+        System.out.println("Значения элементов от min до max: " + numberList);
+        System.out.println("Сумма элементов массива, значения которых больше 5 = " + sumElementsIfValuesMoreThen5(List.of(3, 5, 4, 7, 5, 6, 8, 9, 7, 10)));
         rewriteElementsByIntNumber(100, new ArrayList<>(List.of(10, 9, 2, 8, 3, 7, 4, 6, 5)));
 
     }
@@ -16,38 +17,25 @@ public class Main {
 
     /*Реализуйте метод, принимающий в качестве аргументов числа min и max,
     и возвращающий ArrayList с набором последовательных значений в указанном диапазоне (min и max включительно, шаг - 1)*/
-    public static void minMax() {
-        ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(10, 9, 2, 8, 3, 7, 4, 6, 5));
-        int min = arrayList.get(0);
-        int max = arrayList.get(0);
-        for (int i = 0; i < arrayList.size(); i++) {
-            if (arrayList.get(i) < min) {
-                min = arrayList.get(i);
-            }
+    public static ArrayList<Integer> minMaxList(int min, int max) {
+        ArrayList<Integer> numberList = new ArrayList<>();
+        for (int i = min; i <= max; i++) {
+            numberList.add(i);
         }
-        for (int i = 0; i < arrayList.size(); i++) {
-            if (arrayList.get(i) > max) {
-                max = arrayList.get(i);
-            }
-        }
-        arrayList.sort(Comparator.naturalOrder());
-        System.out.println("Значение min = " + min);
-        System.out.println("Значение max = " + max);
-        System.out.println("Отсотрированный массив со значениями от min до max: " + arrayList);
+        return numberList;
     }
+
 
     /* Реализуйте метод, принимающий в качестве аргумента список целых чисел,
     суммирующий все элементы, значение которых больше 5, и возвращающий сумму;*/
-    public static void sumElementsIfValuesMoreThen5() {
+    public static int sumElementsIfValuesMoreThen5(List<Integer> numbers) {
         int sum = 0;
-        ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(10, 9, 2, 8, 3, 7, 4, 6, 5));
-        for (Integer value : arrayList) {
+        for (Integer value : numbers) {
             if (value > 5) {
                 sum += value;
             }
         }
-        System.out.println("Сумма элементов массива, значения которых больше 5 = " + sum);
-
+        return sum;
     }
 
 
@@ -55,14 +43,12 @@ public class Main {
     метод должен переписать каждую заполненную ячейку списка указанным числом;*/
     public static void rewriteElementsByIntNumber(int number, List<Integer> list) {
         for (int i = 0; i < list.size(); i++) {
-            if(list.get(i)!=null){
-                list.set(i,number);
+            if (list.get(i) != null) {
+                list.set(i, number);
             }
         }
         System.out.println(list);
-
     }
-
 }
 
 
