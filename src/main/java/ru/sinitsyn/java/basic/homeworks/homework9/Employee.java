@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/*
+/**
 * Создайте класс Сотрудник с полями: имя, возраст;
 * Реализуйте метод, принимающий в качестве аргумента список сотрудников, и возвращающий список их имен;
 * Реализуйте метод, принимающий в качестве аргумента список сотрудников и минимальный возраст,
@@ -14,7 +14,7 @@ import java.util.List;
   и проверяющий что средний возраст сотрудников превышает указанный аргумент;
 * Реализуйте метод, принимающий в качестве аргумента список сотрудников, и возвращающий ссылку на самого молодого сотрудника*/
 public class Employee {
-    //Ниже модуль для запуска методов
+    /**Ниже модуль для запуска методов*/
     public static void main(String[] args) {
         List<Employee> employee = generateList();
         //вывод задач в консоль по порядку
@@ -61,7 +61,8 @@ public class Employee {
     public String toString() {
         return firstName + " " + lastName + " " + age;
     }
-    //Утильный метод для работы со списками сотрудников
+    /**
+     * Утильный метод для работы со списками сотрудников */
     public static List<Employee> generateList() {
         List<Employee> result = new ArrayList<>();
         result.add(new Employee("Иван", "Иванов", 30));
@@ -72,9 +73,9 @@ public class Employee {
         return result;
 
     }
-    //Ниже методы по порядку
+    /**Ниже методы по порядку
 
-    //Реализуйте метод, принимающий в качестве аргумента список сотрудников, и возвращающий список их имен;
+     * Реализуйте метод, принимающий в качестве аргумента список сотрудников, и возвращающий список их имен;*/
     public static List<String> returnListOfNames(List<Employee> employees) {
         List<String> firstNames = new ArrayList<>();
         for (Employee employee : employees) {
@@ -83,7 +84,8 @@ public class Employee {
         return firstNames;
     }
 
-    /*Реализуйте метод, принимающий в качестве аргумента список сотрудников и минимальный возраст,
+    /**
+     * Реализуйте метод, принимающий в качестве аргумента список сотрудников и минимальный возраст,
     и возвращающий список сотрудников, возраст которых больше либо равен указанному аргументу;*/
     public static List<Employee> returnEmployeeListByMinAge(List<Employee> employees, int minAge) {
         List<Employee> employeeListByMinAge = new ArrayList<>();
@@ -95,7 +97,8 @@ public class Employee {
         return employeeListByMinAge;
     }
 
-    /*    Реализуйте метод, принимающий в качестве аргумента список сотрудников и минимальный средний возраст,
+    /**
+     *  Реализуйте метод, принимающий в качестве аргумента список сотрудников и минимальный средний возраст,
         и проверяющий что средний возраст сотрудников превышает указанный аргумент;*/
     public static boolean checkMinAverageAge(List<Employee> employees, int minAverageAge) {
         int sumOfAges = 0;
@@ -106,7 +109,8 @@ public class Employee {
         return averageAge > minAverageAge;
     }
 
-    /*    Реализуйте метод, принимающий в качестве аргумента список сотрудников, и возвращающий ссылку на самого молодого сотрудника.*/
+    /**
+     *  Реализуйте метод, принимающий в качестве аргумента список сотрудников, и возвращающий ссылку на самого молодого сотрудника.*/
     public static Employee returnLinkToYoungestEmployee(List<Employee> employees) {
         Collections.sort(employees, (employee1, employee2) -> Integer.compare(employee1.getAge(), employee2.getAge()));
         return employees.get(0);
