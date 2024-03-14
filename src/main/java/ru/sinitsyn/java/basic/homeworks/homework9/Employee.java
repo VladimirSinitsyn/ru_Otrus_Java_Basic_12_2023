@@ -1,3 +1,4 @@
+
 package ru.sinitsyn.java.basic.homeworks.homework9;
 
 import java.util.ArrayList;
@@ -13,25 +14,19 @@ import java.util.List;
   и проверяющий что средний возраст сотрудников превышает указанный аргумент;
 * Реализуйте метод, принимающий в качестве аргумента список сотрудников, и возвращающий ссылку на самого молодого сотрудника*/
 public class Employee {
-    //Ниже модуль для запуска методов.
+    //Ниже модуль для запуска методов
     public static void main(String[] args) {
-        List<Employee> employee = new ArrayList<>();
-        employee.add(new Employee("Иван", "Иванов", 30));
-        employee.add(new Employee("Cергей", "Сергеев", 25));
-        employee.add(new Employee("Пётр", "Петров", 35));
-        employee.add(new Employee("Елена", "Еленовна", 20));
-        employee.add(new Employee("Максим", "Максимов", 40));
+        List<Employee> employee = generateList();
+        //вывод задач в консоль по порядку
         System.out.println("Cписок имен сотрудников: " + returnListOfNames(employee));
         System.out.println("Список сотрудников, возраст которых больше либо равен указанному аргументу(в данном случае 35):  " + returnEmployeeListByMinAge(employee, 35));
         System.out.println("Проверка, что средний возраст всех сотрдуников больше 29 " + checkMinAverageAge(employee, 29));
         System.out.println("Самый молодой сотрудник " + Employee.returnLinkToYoungestEmployee(employee));
     }
-
     //Ниже конструктор
     private String firstName;
     private String lastName;
     private int age;
-
     public Employee(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -66,7 +61,17 @@ public class Employee {
     public String toString() {
         return firstName + " " + lastName + " " + age;
     }
+    //Утильный метод для работы со списками сотрудников
+    public static List<Employee> generateList() {
+        List<Employee> result = new ArrayList<>();
+        result.add(new Employee("Иван", "Иванов", 30));
+        result.add(new Employee("Cергей", "Сергеев", 25));
+        result.add(new Employee("Пётр", "Петров", 35));
+        result.add(new Employee("Елена", "Еленовна", 20));
+        result.add(new Employee("Максим", "Максимов", 40));
+        return result;
 
+    }
     //Ниже методы по порядку
 
     //Реализуйте метод, принимающий в качестве аргумента список сотрудников, и возвращающий список их имен;
@@ -107,5 +112,3 @@ public class Employee {
         return employees.get(0);
     }
 }
-
-
