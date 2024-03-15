@@ -15,7 +15,9 @@ public class Main {
 
     /**
      * Реализуйте метод, принимающий в качестве аргументов числа min и max,
-    и возвращающий ArrayList с набором последовательных значений в указанном диапазоне (min и max включительно, шаг - 1)*/
+    и возвращающий
+     * @return  ArrayList </Integer> с набором последовательных значений в указанном диапазоне (min и max включительно, шаг - 1)
+   */
     public static ArrayList<Integer> minMaxList(int min, int max) {
         ArrayList<Integer> numberList = new ArrayList<>();
         for (int i = min; i <= max; i++) {
